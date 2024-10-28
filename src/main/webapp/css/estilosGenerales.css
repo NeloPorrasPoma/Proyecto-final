@@ -1,0 +1,127 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 24 sept. 2024, 16:08:40
+    Author     : UsuarioTK
+*/ 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ 
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .nav-center {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+
+header .nav-center li {
+    margin: 0 10px;
+}
+
+header .nav-center li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+}
+
+header .nav-center li a:hover {
+    background-color: #555;
+    border-radius: 5px;
+}
+
+header .nav-right {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+header .nav-right li {
+    margin: 0 10px;
+}
+
+header .nav-right li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+}
+
+header .nav-right li a:hover {
+    background-color: #555;
+    border-radius: 5px;
+}
+
+/* Estilos para el botón flotante de ayuda */
+.btn-ayuda {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #1c3cd6;  
+    color: white;
+    padding: 15px 20px;
+    border-radius: 50px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+    z-index: 1000;  
+}
+
+.btn-ayuda:hover {
+    background-color: #072eed;  
+}
+
+
+/* Pie de página */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 2px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    header nav {
+        flex-direction: column;
+    }
+
+    header .nav-center,
+    header .nav-right {
+        flex-direction: column;
+    }
+
+    header .nav-center li,
+    header .nav-right li {
+        margin: 5px 0;
+    }
+}
+

@@ -1,0 +1,109 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 27 oct. 2024, 15:04:21
+    Author     : UsuarioTK */
+#registro {
+    width: 100%;
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.registro-image {
+    display: block;
+    margin: 1px;
+    width: 100%;
+    height: auto; 
+}
+ 
+#registro h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+ 
+.form-registro {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-registro label {
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-registro input[type="text"],
+.form-registro input[type="email"],
+.form-registro input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+ 
+.form-registro button {
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.form-registro button:hover {
+    background-color: #0056b3;
+}
+ 
+.error-message {
+    color: #FF0000;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 10px;
+}
+ 
+.enlace {
+    text-align: center;
+    font-size: 14px;
+    margin-top: 15px;
+}
+
+.enlace a {
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.enlace a:hover {
+    text-decoration: underline;
+}
+ 
+@media (max-width: 768px) {
+    #registro {
+        padding: 15px;
+        margin: 20px;
+    }
+
+    .form-registro input[type="text"],
+    .form-registro input[type="email"],
+    .form-registro input[type="password"],
+    .form-registro button {
+        font-size: 14px;
+    }
+
+    #registro h2 {
+        font-size: 22px;
+    }
+}

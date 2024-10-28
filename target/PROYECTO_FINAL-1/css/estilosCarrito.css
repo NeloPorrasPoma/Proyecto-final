@@ -1,0 +1,65 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 1 oct. 2024, 15:22:36
+    Author     : UsuarioTK
+*/
+
+/* Estilo para la sección del carrito */
+#carrito {
+    padding: 20px;
+    background-color: #fff;
+}
+
+h2 {
+    margin-top: 0;
+}
+
+/* Tabla del carrito */
+.tabla-carrito {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.tabla-carrito th, .tabla-carrito td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.tabla-carrito th {
+    background-color: #f4f4f4;
+}
+
+.img-carrito {
+    max-width: 100px;
+    height: auto;
+}
+
+.form-cantidad, .form-eliminar {
+    display: inline-block;
+    margin: 0;
+}
+
+.btn-actualizar, .btn-eliminar, .btn-pagar {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn-actualizar:hover, .btn-eliminar:hover, .btn-pagar:hover {
+    background-color: #0056b3;
+}
+
+.resumen-carrito {
+    text-align: right;
+    margin-top: 20px;
+}

@@ -1,0 +1,74 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 28 oct. 2024, 11:08:38
+    Author     : UsuarioTK
+*/
+
+.contenedor-principal {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+}
+
+.cuadro {
+    border: 1px solid #ccc;
+    padding: 20px;
+    width: 30%;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    margin-right: 10px;
+}
+
+.cuadro:last-child {
+    margin-right: 0;
+}
+
+.usuarios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 20px;
+}
+
+.usuario-item {
+    border: 2px solid #000;
+    padding: 15px;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    background-color: #f9f9f9;
+    transition: transform 0.2s;
+}
+
+.usuario-item:hover {
+    transform: scale(1.05);
+}
+
+/* Estilo para la imagen del logo */
+.registro-image {
+    width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+}
+
+/* Estilos de los botones */
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 48%;
+    margin: 5px 0;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+label, input, textarea, button {
+    display: block;
+    width: 95%;
+    margin-bottom: 10px;
+    padding: 10px;
+}

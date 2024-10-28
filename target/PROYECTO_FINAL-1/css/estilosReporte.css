@@ -1,0 +1,43 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 18 oct. 2024, 15:06:16
+    Author     : UsuarioTK
+*/ 
+h2 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+form label {
+    font-weight: bold;
+}
+.reporte-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+.reporte-table th, .reporte-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+.reporte-table th {
+    background-color: #4CAF50;
+    color: white;
+}
+.reporte-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+.reporte-table tr:hover {
+    background-color: #ddd;
+}

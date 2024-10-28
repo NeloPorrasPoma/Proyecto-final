@@ -1,0 +1,68 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 17 oct. 2024, 16:59:31
+    Author     : UsuarioTK
+*/   
+#pedidos {
+    padding: 20px;
+    background-color: #fff;
+    margin-top: 20px;
+}
+
+.contenido-pedidos {
+    max-width: 1200px; 
+    margin: 0 auto;
+}
+
+.seccion-pedidos {
+    margin-bottom: 30px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+}
+
+.seccion-pedidos h2 {
+    color: #007BFF;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse; 
+}
+
+.table th, .table td {
+    padding: 10px;
+    border: 1px solid #ddd; 
+    text-align: left;
+}
+
+.table th {
+    background-color: #f2f2f2;
+}
+
+.detalles {
+    margin-top: 10px;
+    display: none; 
+    padding: 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    background-color: #fafafa;
+}
+
+.btn-actualizar {
+    background-color: #28a745; 
+    color: white; 
+    border: none; 
+    border-radius: 5px; 
+    padding: 10px 15px; 
+    cursor: pointer; 
+    transition: background-color 0.3s;
+}
+
+.btn-actualizar:hover {
+    background-color: #218838; 
+}

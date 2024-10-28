@@ -1,0 +1,117 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 24 sept. 2024, 16:08:49
+    Author     : UsuarioTK
+*/ 
+#productos-busqueda {
+    padding: 20px;
+}
+
+#buscar-productos {
+    margin-bottom: 20px;
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#buscar-productos h2 {
+    margin-bottom: 10px;
+}
+
+#buscar-productos form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+}
+
+#buscar-productos label {
+    flex: 1 1 auto;
+}
+
+#buscar-productos input,
+#buscar-productos select,
+#buscar-productos button {
+    flex: 1 1 auto;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+#productos-destacados {
+    margin-top: 20px;
+}
+
+#productos-destacados h2 {
+    margin-bottom: 20px;
+}
+
+.productos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.producto-item {
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.producto-item img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.cantidad {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.cantidad button {
+    padding: 5px 10px;
+    margin: 0 5px;
+}
+
+.cantidad input {
+    width: 50px;
+    text-align: center;
+}
+
+.btn-agregar {
+    background-color: #0056b3;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.btn-agregar:hover {
+    background-color: #218838;
+} 
+
+@media (max-width: 768px) {
+    #buscar-productos form {
+        flex-direction: column;
+    }
+
+    #buscar-productos input,
+    #buscar-productos select,
+    #buscar-productos button {
+        flex: 1 1 100%;
+    }
+
+    .productos-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
