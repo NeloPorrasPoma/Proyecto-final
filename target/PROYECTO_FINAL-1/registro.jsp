@@ -73,6 +73,7 @@
                 <p class="enlace"><a href="index.jsp">Cancelar</a></p>
             </div>
         </main>
+                <button onclick="window.location.href='contacto.jsp'" class="btn-ayuda">¿Necesitas ayuda?</button>
         <footer>
             <p>&copy; 2024 XCEL_SERVER. Todos los derechos reservados.</p>
         </footer>

@@ -53,6 +53,7 @@
                 <p class="enlace">¿No tienes una cuenta? <a href="registro.jsp">Regístrate aquí</a></p>
             </div>
         </main>
+                <button onclick="window.location.href='contacto.jsp'" class="btn-ayuda">¿Necesitas ayuda?</button>
         <footer>
             <p>&copy; 2024 XCEL_SERVER. Todos los derechos reservados.</p>
         </footer>
