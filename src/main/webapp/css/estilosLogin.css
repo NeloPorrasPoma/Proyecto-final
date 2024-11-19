@@ -7,63 +7,94 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
     Author     : UsuarioTK
 */
  
+/* SECCIÓN LOGIN */
 #login {
-    padding: 30px;
-    background-color: #fff;
+    padding: 40px 20px;
+    background-color: #f9f9f9;
     max-width: 400px;
-    margin: 50px auto;
-    border-radius: 8px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 60px auto;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    border-top: 5px solid #004aad;
+    animation: fadeIn 0.6s ease-in-out;
 }
 
 #login h1 {
     text-align: center;
-    color: #007BFF;
+    color: #004aad;
+    font-size: 1.8rem;
     margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .login-image {
     max-width: 100%;  
     height: auto;  
-    margin-bottom: 10px;  
+    margin-bottom: 15px;  
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 8px;
 }
 
+/* Formulario */
 .form-login {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 20px;
 }
 
 .form-login label {
     font-weight: bold;
+    color: #333;
+    font-size: 14px;
 }
 
 .form-login input {
-    padding: 10px;
+    padding: 12px 15px;
     border: 1px solid #ddd;
-    border-radius: 4px;
+    border-radius: 8px;
     width: 100%;
+    font-size: 14px;
+    background-color: #fff;
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.form-login input:focus {
+    border-color: #004aad;
+    box-shadow: 0 0 8px rgba(0, 74, 173, 0.5);
+    outline: none;
 }
 
 .form-login button {
-    background-color: #007BFF;
+    background-color: #ff6f61;
     color: white;
     border: none;
-    padding: 10px;
-    border-radius: 5px;
+    padding: 12px 20px;
+    border-radius: 8px;
     cursor: pointer;
     font-size: 16px;
-    width: 105%;
+    width: 100%;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .form-login button:hover {
-    background-color: #0056b3;
+    background-color: #ff4e3a;
+    transform: translateY(-2px);
+}
+
+.form-login button:active {
+    background-color: #e63922;
+    transform: translateY(1px);
 }
 
 .error-message {
-    color: #FF0000;
+    color: #e63922;
     font-size: 14px;
     text-align: center;
+    font-weight: bold;
 }
 
 .enlace {
@@ -73,11 +104,58 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
 }
 
 .enlace a {
-    color: #007BFF;
+    color: #004aad;
     text-decoration: none;
     font-weight: bold;
+    transition: color 0.3s ease;
 }
 
 .enlace a:hover {
+    color: #ff6f61;
     text-decoration: underline;
+}
+
+/* ANIMACIONES */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* RESPONSIVIDAD */
+@media (max-width: 768px) {
+    #login {
+        padding: 30px 15px;
+    }
+
+    #login h1 {
+        font-size: 1.5rem;
+    }
+
+    .form-login input, .form-login button {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    #login {
+        padding: 20px 10px;
+    }
+
+    #login h1 {
+        font-size: 1.3rem;
+    }
+
+    .form-login input {
+        font-size: 12px;
+    }
+
+    .form-login button {
+        font-size: 14px;
+    }
 }

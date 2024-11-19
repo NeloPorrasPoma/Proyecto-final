@@ -1,28 +1,28 @@
-C:\Users\UsuarioTK\Desktop\NELSON\AGOSTO 2024\INTEGRADOR\PROYECTO\PROYECTO_FINAL\src\main\java\DAO\UsuarioAdminDAO.java
-C:\Users\UsuarioTK\Desktop\NELSON\AGOSTO 2024\INTEGRADOR\PROYECTO\PROYECTO_FINAL\src\main\java\controlador\IndexServlet.java
-C:\Users\UsuarioTK\Desktop\NELSON\AGOSTO 2024\INTEGRADOR\PROYECTO\PROYECTO_FINAL\src\main\java\controlador\LogoutServlet.java
-C:\Users\UsuarioTK\Desktop\NELSON\AGOSTO 2024\INTEGRADOR\PROYECTO\PROYECTO_FINAL\src\main\java\DAO\DatosPersonalesDAO.java
-C:\Users\UsuarioTK\Desktop\NELSON\AGOSTO 2024\INTEGRADOR\PROYECTO\PROYECTO_FINAL\src\main\java\DAO\RolDAO.java
-C:\Users\UsuarioTK\Desktop\NELSON\AGOSTO 2024\INTEGRADOR\PROYECTO\PROYECTO_FINAL\src\main\java\modelo\Rol.java
-C:\Users\UsuarioTK\Desktop\NELSON\AGOSTO 2024\INTEGRADOR\PROYECTO\PROYECTO_FINAL\src\main\java\controlador\CarritoServlet.java
-C:\Users\UsuarioTK\Desktop\NELSON\AGOSTO 2024\INTEGRADOR\PROYECTO\PROYECTO_FINAL\src\main\java\controlador\ActualizarEstadoServlet.java
-C:\Users\UsuarioTK\Desktop\NELSON\AGOSTO 2024\INTEGRADOR\PROYECTO\PROYECTO_FINAL\src\main\java\controlador\UsuarioServlet.java
-C:\Users\UsuarioTK\Desktop\NELSON\AGOSTO 2024\INTEGRADOR\PROYECTO\PROYECTO_FINAL\src\main\java\controlador\ProcesarPagoServlet.java
-C:\Users\UsuarioTK\Desktop\NELSON\AGOSTO 2024\INTEGRADOR\PROYECTO\PROYECTO_FINAL\src\main\java\modelo\Producto.java
-C:\Users\UsuarioTK\Desktop\NELSON\AGOSTO 2024\INTEGRADOR\PROYECTO\PROYECTO_FINAL\src\main\java\modelo\Usuario.java
-C:\Users\UsuarioTK\Desktop\NELSON\AGOSTO 2024\INTEGRADOR\PROYECTO\PROYECTO_FINAL\src\main\java\DAO\ProductoDAO.java
-C:\Users\UsuarioTK\Desktop\NELSON\AGOSTO 2024\INTEGRADOR\PROYECTO\PROYECTO_FINAL\src\main\java\DAO\UsuarioDAO.java
-C:\Users\UsuarioTK\Desktop\NELSON\AGOSTO 2024\INTEGRADOR\PROYECTO\PROYECTO_FINAL\src\main\java\modelo\DetallePedido.java
-C:\Users\UsuarioTK\Desktop\NELSON\AGOSTO 2024\INTEGRADOR\PROYECTO\PROYECTO_FINAL\src\main\java\com\xcelserver\PROYECTO_FINAL\resources\JakartaEE10Resource.java
-C:\Users\UsuarioTK\Desktop\NELSON\AGOSTO 2024\INTEGRADOR\PROYECTO\PROYECTO_FINAL\src\main\java\controlador\LoginServlet.java
-C:\Users\UsuarioTK\Desktop\NELSON\AGOSTO 2024\INTEGRADOR\PROYECTO\PROYECTO_FINAL\src\main\java\controlador\ProductosServlet.java
-C:\Users\UsuarioTK\Desktop\NELSON\AGOSTO 2024\INTEGRADOR\PROYECTO\PROYECTO_FINAL\src\main\java\controlador\ReporteServlet.java
-C:\Users\UsuarioTK\Desktop\NELSON\AGOSTO 2024\INTEGRADOR\PROYECTO\PROYECTO_FINAL\src\main\java\DAO\CategoriaDAO.java
-C:\Users\UsuarioTK\Desktop\NELSON\AGOSTO 2024\INTEGRADOR\PROYECTO\PROYECTO_FINAL\src\main\java\modelo\DatosPersonales.java
-C:\Users\UsuarioTK\Desktop\NELSON\AGOSTO 2024\INTEGRADOR\PROYECTO\PROYECTO_FINAL\src\main\java\DAO\PedidoDAO.java
-C:\Users\UsuarioTK\Desktop\NELSON\AGOSTO 2024\INTEGRADOR\PROYECTO\PROYECTO_FINAL\src\main\java\controlador\RegistroServlet.java
-C:\Users\UsuarioTK\Desktop\NELSON\AGOSTO 2024\INTEGRADOR\PROYECTO\PROYECTO_FINAL\src\main\java\com\xcelserver\PROYECTO_FINAL\JakartaRestConfiguration.java
-C:\Users\UsuarioTK\Desktop\NELSON\AGOSTO 2024\INTEGRADOR\PROYECTO\PROYECTO_FINAL\src\main\java\controlador\AjustesServlet.java
-C:\Users\UsuarioTK\Desktop\NELSON\AGOSTO 2024\INTEGRADOR\PROYECTO\PROYECTO_FINAL\src\main\java\modelo\Categoria.java
-C:\Users\UsuarioTK\Desktop\NELSON\AGOSTO 2024\INTEGRADOR\PROYECTO\PROYECTO_FINAL\src\main\java\modelo\Pedido.java
-C:\Users\UsuarioTK\Desktop\NELSON\AGOSTO 2024\INTEGRADOR\PROYECTO\PROYECTO_FINAL\src\main\java\conexion\conexion.java
+C:\Users\UsuarioTK\Desktop\NELSON\AGOSTO 2024\INTEGRADOR\PROYECTO FINAL\PROYECTO\src\main\java\modelo\Rol.java
+C:\Users\UsuarioTK\Desktop\NELSON\AGOSTO 2024\INTEGRADOR\PROYECTO FINAL\PROYECTO\src\main\java\controlador\RegistroServlet.java
+C:\Users\UsuarioTK\Desktop\NELSON\AGOSTO 2024\INTEGRADOR\PROYECTO FINAL\PROYECTO\src\main\java\DAO\DatosPersonalesDAO.java
+C:\Users\UsuarioTK\Desktop\NELSON\AGOSTO 2024\INTEGRADOR\PROYECTO FINAL\PROYECTO\src\main\java\DAO\RolDAO.java
+C:\Users\UsuarioTK\Desktop\NELSON\AGOSTO 2024\INTEGRADOR\PROYECTO FINAL\PROYECTO\src\main\java\controlador\LoginServlet.java
+C:\Users\UsuarioTK\Desktop\NELSON\AGOSTO 2024\INTEGRADOR\PROYECTO FINAL\PROYECTO\src\main\java\modelo\Producto.java
+C:\Users\UsuarioTK\Desktop\NELSON\AGOSTO 2024\INTEGRADOR\PROYECTO FINAL\PROYECTO\src\main\java\controlador\CarritoServlet.java
+C:\Users\UsuarioTK\Desktop\NELSON\AGOSTO 2024\INTEGRADOR\PROYECTO FINAL\PROYECTO\src\main\java\DAO\ProductoDAO.java
+C:\Users\UsuarioTK\Desktop\NELSON\AGOSTO 2024\INTEGRADOR\PROYECTO FINAL\PROYECTO\src\main\java\modelo\Categoria.java
+C:\Users\UsuarioTK\Desktop\NELSON\AGOSTO 2024\INTEGRADOR\PROYECTO FINAL\PROYECTO\src\main\java\conexion\conexion.java
+C:\Users\UsuarioTK\Desktop\NELSON\AGOSTO 2024\INTEGRADOR\PROYECTO FINAL\PROYECTO\src\main\java\controlador\ReporteServlet.java
+C:\Users\UsuarioTK\Desktop\NELSON\AGOSTO 2024\INTEGRADOR\PROYECTO FINAL\PROYECTO\src\main\java\controlador\ActualizarEstadoServlet.java
+C:\Users\UsuarioTK\Desktop\NELSON\AGOSTO 2024\INTEGRADOR\PROYECTO FINAL\PROYECTO\src\main\java\DAO\UsuarioAdminDAO.java
+C:\Users\UsuarioTK\Desktop\NELSON\AGOSTO 2024\INTEGRADOR\PROYECTO FINAL\PROYECTO\src\main\java\controlador\ProcesarPagoServlet.java
+C:\Users\UsuarioTK\Desktop\NELSON\AGOSTO 2024\INTEGRADOR\PROYECTO FINAL\PROYECTO\src\main\java\controlador\IndexServlet.java
+C:\Users\UsuarioTK\Desktop\NELSON\AGOSTO 2024\INTEGRADOR\PROYECTO FINAL\PROYECTO\src\main\java\controlador\LogoutServlet.java
+C:\Users\UsuarioTK\Desktop\NELSON\AGOSTO 2024\INTEGRADOR\PROYECTO FINAL\PROYECTO\src\main\java\controlador\ProductosServlet.java
+C:\Users\UsuarioTK\Desktop\NELSON\AGOSTO 2024\INTEGRADOR\PROYECTO FINAL\PROYECTO\src\main\java\controlador\UsuarioServlet.java
+C:\Users\UsuarioTK\Desktop\NELSON\AGOSTO 2024\INTEGRADOR\PROYECTO FINAL\PROYECTO\src\main\java\DAO\PedidoDAO.java
+C:\Users\UsuarioTK\Desktop\NELSON\AGOSTO 2024\INTEGRADOR\PROYECTO FINAL\PROYECTO\src\main\java\modelo\Pedido.java
+C:\Users\UsuarioTK\Desktop\NELSON\AGOSTO 2024\INTEGRADOR\PROYECTO FINAL\PROYECTO\src\main\java\DAO\CategoriaDAO.java
+C:\Users\UsuarioTK\Desktop\NELSON\AGOSTO 2024\INTEGRADOR\PROYECTO FINAL\PROYECTO\src\main\java\com\xcelserver\PROYECTO_FINAL\JakartaRestConfiguration.java
+C:\Users\UsuarioTK\Desktop\NELSON\AGOSTO 2024\INTEGRADOR\PROYECTO FINAL\PROYECTO\src\main\java\modelo\DatosPersonales.java
+C:\Users\UsuarioTK\Desktop\NELSON\AGOSTO 2024\INTEGRADOR\PROYECTO FINAL\PROYECTO\src\main\java\controlador\AjustesServlet.java
+C:\Users\UsuarioTK\Desktop\NELSON\AGOSTO 2024\INTEGRADOR\PROYECTO FINAL\PROYECTO\src\main\java\com\xcelserver\PROYECTO_FINAL\resources\JakartaEE10Resource.java
+C:\Users\UsuarioTK\Desktop\NELSON\AGOSTO 2024\INTEGRADOR\PROYECTO FINAL\PROYECTO\src\main\java\modelo\DetallePedido.java
+C:\Users\UsuarioTK\Desktop\NELSON\AGOSTO 2024\INTEGRADOR\PROYECTO FINAL\PROYECTO\src\main\java\DAO\UsuarioDAO.java
+C:\Users\UsuarioTK\Desktop\NELSON\AGOSTO 2024\INTEGRADOR\PROYECTO FINAL\PROYECTO\src\main\java\modelo\Usuario.java

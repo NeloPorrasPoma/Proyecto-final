@@ -31,7 +31,7 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.28</version> <!-- Asegúrate de tener la versión correcta según tu servidor MySQL -->
+            <version>8.0.28</version>  
         </dependency>
 
         <!-- Logback para logging -->
@@ -64,6 +64,13 @@
             <artifactId>poi-ooxml</artifactId>
             <version>5.2.3</version>
         </dependency>
+  
+        <!-- iText -->
+        <dependency>
+            <groupId>com.lowagie</groupId>
+            <artifactId>itext</artifactId>
+            <version>2.1.7</version>
+        </dependency> 
         
         <!-- Apache Commons -->
         <dependency>

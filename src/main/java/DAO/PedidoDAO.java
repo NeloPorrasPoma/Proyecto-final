@@ -163,6 +163,7 @@ public List<Pedido> buscarPedidosPorFecha(String fechaInicio, String fechaFin) {
                 pedido.setId(rs.getInt("ID"));
                 pedido.setClienteId(rs.getInt("CLIENTE_ID"));
                 pedido.setTotal(rs.getDouble("TOTAL"));
+                pedido.setFecha(rs.getString("FECHA"));
                 pedido.setEstado(rs.getString("ESTADO"));
                 pedidos.add(pedido);
             }

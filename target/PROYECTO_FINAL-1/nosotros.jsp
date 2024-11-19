@@ -59,7 +59,7 @@
  
         <div class="contenido-nosotros"> 
             <section id="nuestra-mision" class="seccion-nosotros">
-                <h2>Nuestra Misión</h2>
+                <h2>NUESTRA MISIÓN</h2>
                 <p>Brindar productos y servicios informáticos de alta calidad que satisfagan las
 necesidades de nuestros clientes, a través de un servicio al cliente excepcional y
 una atención personalizada, contribuyendo al desarrollo tecnológico de nuestra
@@ -67,7 +67,7 @@ comunidad.</p>
             </section>
  
             <section id="nuestra-vision" class="seccion-nosotros">
-                <h2>Nuestra Visión</h2>
+                <h2>NUESTRA VISIÓN</h2>
                 <p>Convertirnos en un referente en el mercado de productos y servicios informáticos
 en Perú, mediante la innovación y la mejora continua de nuestros procesos,
 expandiendo nuestra presencia digital para alcanzar un mercado más amplio y
@@ -75,7 +75,7 @@ ofrecer una experiencia de compra eficiente y satisfactoria.</p>
             </section>
  
             <section id="nuestra-historia" class="seccion-nosotros">
-                <h2>Nuestra Historia</h2>
+                <h2>NUESTRA HISTORIA</h2>
                 <p>Xcel Server es un negocio fundada en 2008 en la ciudad de Tarma, Perú, dedicada
 a la venta y distribución de productos informáticos como laptops, impresoras,
 teclados, y audífonos, además de ofrecer servicios técnicos para computadoras e
@@ -84,7 +84,7 @@ compromiso con la calidad de sus productos y servicios, así como a su excelente
 atención al cliente.</p>
             </section> 
             <section id="conoce-al-equipo" class="seccion-nosotros">
-                <h2>Conoce al Equipo</h2>
+                <h2>CONOCE AL EQUIPO</h2>
                 <div class="equipo-grid">
                     <div class="miembro-equipo">
                         <img src="img/IMG.jpg" alt="CEO - XCEL SERVER">

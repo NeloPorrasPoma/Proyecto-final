@@ -78,19 +78,25 @@
                 <h2>BUSCAR PRODUCTO</h2>
                 <form action="ProductosServlet" method="get" class="form-busqueda">
                     <input type="hidden" name="action" value="buscarProductos">
-                    <label for="nombre">Nombre:</label>
-                    <input type="text" id="nombre" name="buscarNombre" placeholder="Buscar por nombre" />
 
-                    <label for="categoria">Categoría:</label>
-                    <select id="categoria" name="buscarCategoria">
-                        <option value="">Todas</option>
-                        <% for (Categoria categoria : categorias) { %>
+                    <div class="form-group">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" name="buscarNombre" placeholder="Buscar por nombre" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="categoria">Categoría:</label>
+                        <select id="categoria" name="buscarCategoria">
+                            <option value="">Todas</option>
+                            <% for (Categoria categoria : categorias) { %>
                             <option value="<%= categoria.getId() %>"><%= categoria.getNombre() %></option>
-                        <% } %>
-                    </select>
+                            <% } %>
+                        </select>
+                    </div>
 
                     <button type="submit" class="btn-agregar">Buscar</button>
                 </form>
+
             </div>
 
            <!-- Sección de productos -->

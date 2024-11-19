@@ -1,7 +1,13 @@
+DAO\DatosPersonalesDAO.class
+controlador\RegistroServlet.class
+DAO\RolDAO.class
 com\xcelserver\PROYECTO_FINAL\resources\JakartaEE10Resource.class
 DAO\UsuarioDAO.class
+modelo\DatosPersonales.class
 modelo\DetallePedido.class
 controlador\LogoutServlet.class
+controlador\UsuarioServlet.class
+DAO\UsuarioAdminDAO.class
 controlador\IndexServlet.class
 controlador\CarritoServlet.class
 modelo\Pedido.class

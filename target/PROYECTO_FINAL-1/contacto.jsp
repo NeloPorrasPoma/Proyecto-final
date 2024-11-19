@@ -63,7 +63,7 @@
             <h2>Contáctanos</h2>
             <form action="enviarMensaje.jsp" method="post" class="form-contacto">
                 <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" name="nombre" required placeholder="Escribe t nombre">
+                <input type="text" id="nombre" name="nombre" required placeholder="Escribe tu nombre">
                 
                 <label for="email">Correo electrónico:</label>
                 <input type="email" id="email" name="email" required placeholder="Escribe tu correo electrónico">
