@@ -21,6 +21,9 @@
 <body> 
     <header>
         <nav>
+            <ul class="nav-left"> 
+                <li>XCEL SERVER</li> 
+            </ul>
         <ul class="nav-center">
             <% if (usuario == null) { %> 
                 <li><a href="productos.jsp">PRODUCTOS</a></li>
@@ -62,21 +65,17 @@
         <div class="pago-contenedor">
             <h2>Proceder al Pago</h2>
             <form action="ProcesarPagoServlet" method="post" class="form-pago" onsubmit="mostrarModal(event)">
-                <div class="form-group">
-                    <label for="nombre">Nombre en la tarjeta:</label>
-                    <input type="text" id="nombre" name="nombre" required>
+                <div class="form-group"> 
+                    <input type="text" id="nombre" name="nombre" placeholder="Titular de la tarjeta" required>
                 </div>
-                <div class="form-group">
-                    <label for="numero">Número de tarjeta:</label>
-                    <input type="text" id="numero" name="numero" required pattern="\d{16}" title="Debe contener 16 dígitos">
+                <div class="form-group"> 
+                    <input type="text" id="numero" name="numero" placeholder="Número de tarjeta" required pattern="\d{16}" title="Debe contener 16 dígitos">
                 </div>
-                <div class="form-group">
-                    <label for="expiracion">Fecha de expiración (MM/AA):</label>
-                    <input type="text" id="expiracion" name="expiracion" required pattern="\d{2}/\d{2}" title="Formato MM/AA">
+                <div class="form-group"> 
+                    <input type="text" id="expiracion" name="expiracion" placeholder="Fecha de expiración (MM/AA)" required pattern="\d{2}/\d{2}" title="Formato MM/AA">
                 </div>
-                <div class="form-group">
-                    <label for="cvv">CVV:</label>
-                    <input type="text" id="cvv" name="cvv" required pattern="\d{3}" title="Debe contener 3 dígitos">
+                <div class="form-group"> 
+                    <input type="text" id="cvv" name="cvv" placeholder="CVV" required pattern="\d{3}" title="Debe contener 3 dígitos">
                 </div>
                 <button type="submit" class="btn-pagar">Pagar</button>
             </form>

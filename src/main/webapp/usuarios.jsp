@@ -30,6 +30,9 @@ List<Rol> roles = (List<Rol>) request.getAttribute("roles");
 <body>
     <header>
         <nav>
+            <ul class="nav-left"> 
+                <li>XCEL SERVER</li> 
+            </ul>
             <ul class="nav-center">
                 <% if (usuario == null) { %>
                     <li><a href="productos.jsp">PRODUCTOS</a></li>
@@ -100,23 +103,15 @@ List<Rol> roles = (List<Rol>) request.getAttribute("roles");
             <div class="cuadro" id="registro"> 
                 <h2>Registro de Usuario</h2>
                 <form action="RegistroServlet" method="post" class="form-registro">
-                    <input type="hidden" name="id" value="${usuarioSeleccionado.id}">
-                    <label for="nombre">Nombre:</label>
-                    <input type="text" id="nombre" name="nombre" value="${datosPersonales.nombre}" required>
-                    <label for="apellidos">Apellidos:</label>
-                    <input type="text" id="apellidos" name="apellidos" value="${datosPersonales.apellidos}" required>
-                    <label for="docIdentidad">Documento de Identidad:</label>
-                    <input type="text" id="docIdentidad" name="docIdentidad" value="${datosPersonales.docIdentidad}" required>
-                    <label for="direccion">Dirección:</label>
-                    <input type="text" id="direccion" name="direccion" value="${datosPersonales.direccion}">
-                    <label for="telefono">Teléfono:</label>
-                    <input type="text" id="telefono" name="telefono" value="${datosPersonales.telefono}">
-                    <label for="correo">Correo Electrónico:</label>
-                    <input type="email" id="correo" name="correo" value="${datosPersonales.correo}" required>
-                    <label for="usuario">Usuario:</label>
-                    <input type="text" id="usuario" name="usuario" value="${usuarioSeleccionado.usuario}" required>
-                    <label for="contrasena">Contraseña:</label>
-                    <input type="password" id="contrasena" name="contrasena" value="${usuarioSeleccionado.contrasena}" required>
+                    <input type="hidden" name="id" value="${usuarioSeleccionado.id}"> 
+                    <input type="text" id="nombre" name="nombre" value="${datosPersonales.nombre}" required placeholder="Nombre"> 
+                    <input type="text" id="apellidos" name="apellidos" value="${datosPersonales.apellidos}" required placeholder="Apellidos"> 
+                    <input type="text" id="docIdentidad" name="docIdentidad" value="${datosPersonales.docIdentidad}" required placeholder="Documento de Identidad">                 
+                    <input type="text" id="direccion" name="direccion" value="${datosPersonales.direccion}" required placeholder="Dirección"> 
+                    <input type="text" id="telefono" name="telefono" value="${datosPersonales.telefono}" required placeholder="Teléfono"> 
+                    <input type="email" id="correo" name="correo" value="${datosPersonales.correo}" required placeholder="Correo Electrónico" > 
+                    <input type="text" id="usuario" name="usuario" value="${usuarioSeleccionado.usuario}" required placeholder="Usuario"> 
+                    <input type="password" id="contrasena" name="contrasena" value="${usuarioSeleccionado.contrasena}" required placeholder="Contraseña">
                     <label for="rol">Rol:</label>
                     <select id="rol" name="rol" required>
                         <option value="">Seleccionar</option>

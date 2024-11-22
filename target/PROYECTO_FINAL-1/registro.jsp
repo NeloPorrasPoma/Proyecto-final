@@ -25,6 +25,9 @@
     <body>
         <header>
             <nav>
+            <ul class="nav-left"> 
+                <li>XCEL SERVER</li> 
+            </ul>
                 <ul class="nav-center"> 
                     <li><a href="productos.jsp">PRODUCTOS</a></li>
                     <li><a href="nosotros.jsp">NOSOTROS</a></li>
@@ -37,30 +40,25 @@
             <div id="registro">
                 <img src="images/logo.png" alt="LOGO" class="registro-image">
                 <h2>Registro de Usuario</h2>
-                <form action="RegistroServlet" method="post" class="form-registro">
-                    <label for="nombre">Nombre:</label>
-                    <input type="text" id="nombre" name="nombre" required>
-
-                    <label for="apellidos">Apellidos:</label>
-                    <input type="text" id="apellidos" name="apellidos" required>
-
-                    <label for="docIdentidad">Documento de Identidad:</label>
-                    <input type="text" id="docIdentidad" name="docIdentidad" required>
-
-                    <label for="direccion">Dirección:</label>
-                    <input type="text" id="direccion" name="direccion">
-
-                    <label for="telefono">Teléfono:</label>
-                    <input type="text" id="telefono" name="telefono">
-
-                    <label for="correo">Correo Electrónico:</label>
-                    <input type="email" id="correo" name="correo" required>
-
-                    <label for="usuario">Usuario:</label>
-                    <input type="text" id="usuario" name="usuario" required>
-
-                    <label for="contrasena">Contraseña:</label>
-                    <input type="password" id="contrasena" name="contrasena" required>
+                  <p class="enlace">¿Eres nuevo en XCEL SERVER.com?</p> 
+                              <p class="enlace">Regístrate para una compra más facil.</p> 
+                              <p class="enlace">   </p> 
+                <form action="RegistroServlet" method="post" class="form-registro"> 
+                    <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre" required>
+ 
+                    <input type="text" id="apellidos" name="apellidos" placeholder="Ingresa tus apellidos" required>
+ 
+                    <input type="text" id="docIdentidad" name="docIdentidad" placeholder="Ingresa tu Documento de identidad" required>
+ 
+                    <input type="text" id="direccion" name="direccion" placeholder="Ingresa tu dirección" required>
+ 
+                    <input type="text" id="telefono" name="telefono" placeholder="Ingresa tu teléfono" required>
+ 
+                    <input type="email" id="correo" name="correo" required placeholder="Ingresa tu e-mail">
+ 
+                    <input type="text" id="usuario" name="usuario" placeholder="Crea un usuario" required>
+ 
+                    <input type="password" id="contrasena" name="contrasena" placeholder="Crea un contraseña" required>
 
                     <button type="submit">Registrar</button>
                 </form>

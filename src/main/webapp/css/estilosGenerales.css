@@ -55,6 +55,13 @@ header .nav-center li {
     margin: 0 15px;
 }
 
+header .nav-left {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+}
+
 header .nav-center li a {
     color: #fff;
     text-decoration: none;

@@ -21,6 +21,10 @@
     <body> 
         <header>
     <nav>
+        
+            <ul class="nav-left"> 
+                <li>XCEL SERVER</li> 
+            </ul>
         <ul class="nav-center">
             <% if (usuario == null) { %> 
                 <li><a href="productos.jsp">PRODUCTOS</a></li>
@@ -61,17 +65,13 @@
         <!-- Sección de contacto -->
         <section id="contacto">
             <h2>Contáctanos</h2>
-            <form action="enviarMensaje.jsp" method="post" class="form-contacto">
-                <label for="nombre">Nombre:</label>
+            <form action="enviarMensaje.jsp" method="post" class="form-contacto"> 
                 <input type="text" id="nombre" name="nombre" required placeholder="Escribe tu nombre">
-                
-                <label for="email">Correo electrónico:</label>
+                 
                 <input type="email" id="email" name="email" required placeholder="Escribe tu correo electrónico">
-                
-                <label for="asunto">Asunto:</label>
+                 
                 <input type="text" id="asunto" name="asunto" required placeholder="Indícanos el asunto">
-                
-                <label for="mensaje">Mensaje:</label>
+                 
                 <textarea id="mensaje" name="mensaje" rows="5" required placeholder="Déjanos tu mensaje"></textarea>
                 
                 <button type="submit" class="btn-enviar">Enviar</button>

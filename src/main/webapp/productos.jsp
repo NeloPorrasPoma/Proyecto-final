@@ -30,48 +30,51 @@
         <title>Productos | XCEL_SERVER</title>
         <link rel="stylesheet" href="css/estilosGenerales.css">
         <link rel="stylesheet" href="css/estilosProductos.css"> 
-        
+
     </head>
     <body> 
         <header>
-    <nav>
-        <ul class="nav-center">
-            <% if (usuario == null) { %> 
-                <li><a href="productos.jsp">PRODUCTOS</a></li>
-                <li><a href="nosotros.jsp">NOSOTROS</a></li>
-                <li><a href="carrito.jsp">CARRITO</a></li>
-                <li><a href="contacto.jsp">CONTACTO</a></li>
-            <% } else { %>
-                <% if ("CLIENTE".equals(rol)) { %> 
+            <nav>
+                <ul class="nav-left"> 
+                    <li>XCEL SERVER</li> 
+                </ul>
+                <ul class="nav-center"> 
+                    <% if (usuario == null) { %> 
                     <li><a href="productos.jsp">PRODUCTOS</a></li>
                     <li><a href="nosotros.jsp">NOSOTROS</a></li>
                     <li><a href="carrito.jsp">CARRITO</a></li>
                     <li><a href="contacto.jsp">CONTACTO</a></li>
-                <% } else if ("EMPLEADO".equals(rol)) { %>
+                        <% } else { %>
+                        <% if ("CLIENTE".equals(rol)) { %> 
+                    <li><a href="productos.jsp">PRODUCTOS</a></li>
+                    <li><a href="nosotros.jsp">NOSOTROS</a></li>
+                    <li><a href="carrito.jsp">CARRITO</a></li>
+                    <li><a href="contacto.jsp">CONTACTO</a></li>
+                        <% } else if ("EMPLEADO".equals(rol)) { %>
                     <li><a href="nosotros.jsp">NOSOTROS</a></li>
                     <li><a href="pedidos.jsp">PEDIDOS</a></li>
                     <li><a href="reporte.jsp">REPORTE</a></li>
-                <% } else if ("ADMINISTRADOR".equals(rol)) { %>
+                        <% } else if ("ADMINISTRADOR".equals(rol)) { %>
                     <li><a href="nosotros.jsp">NOSOTROS</a></li>
                     <li><a href="pedidos.jsp">PEDIDOS</a></li>
                     <li><a href="reporte.jsp">REPORTE</a></li>
-              <li><a href="usuarios.jsp">USUARIOS</a></li>
+                    <li><a href="usuarios.jsp">USUARIOS</a></li>
                     <li><a href="almacen.jsp">ALMACÉN</a></li>
-                <% } %>
-                <li><a href="ajustes.jsp">AJUSTES</a></li>
-            <% } %>
-        </ul>
- 
-        <ul class="nav-right">
-            <% if (usuario == null) { %>
-                <li><a href="login.jsp">INICIAR SESIÓN</a></li>
-            <% } else { %>
-                <li><a href="LogoutServlet">CERRAR SESIÓN</a></li>
-            <% } %>
-        </ul>
-    </nav>
-</header>
-         <!-- Sección de productos y búsqueda -->
+                        <% } %>
+                    <li><a href="ajustes.jsp">AJUSTES</a></li>
+                        <% } %>
+                </ul>
+
+                <ul class="nav-right">
+                    <% if (usuario == null) { %>
+                    <li><a href="login.jsp">INICIAR SESIÓN</a></li>
+                        <% } else { %>
+                    <li><a href="LogoutServlet">CERRAR SESIÓN</a></li>
+                        <% } %>
+                </ul>
+            </nav>
+        </header>
+        <!-- Sección de productos y búsqueda -->
         <section id="productos-busqueda">
             <!-- Formulario de búsqueda -->
             <div id="buscar-productos">
@@ -99,65 +102,65 @@
 
             </div>
 
-           <!-- Sección de productos -->
-<div id="buscar-productos">
-    <h2>PRODUCTOS</h2>
-    <div class="productos-grid">
-        <% for (Producto producto : productos) { %>
-            <div class="producto-item">
-                <img src="<%= producto.getImagen() %>" alt="<%= producto.getNombre() %>">
-                <p><%= producto.getNombre() %></p>
-                <p>Precio: S/ <%= producto.getPrecio() %></p>
-                <div class="cantidad">
-                    <button type="button" class="btn-decrementar">-</button>
-                    <input type="number" value="1" min="1" class="cantidad-input" name="cantidadInput">
-                    <button type="button" class="btn-incrementar">+</button>
+            <!-- Sección de productos -->
+            <div id="buscar-productos">
+                <h2>PRODUCTOS</h2>
+                <div class="productos-grid">
+                    <% for (Producto producto : productos) { %>
+                    <div class="producto-item">
+                        <img src="<%= producto.getImagen() %>" alt="<%= producto.getNombre() %>">
+                        <p><%= producto.getNombre() %></p>
+                        <p>Precio: S/ <%= producto.getPrecio() %></p>
+                        <div class="cantidad">
+                            <button type="button" class="btn-decrementar">-</button>
+                            <input type="number" value="1" min="1" class="cantidad-input" name="cantidadInput">
+                            <button type="button" class="btn-incrementar">+</button>
+                        </div>
+                        <form action="CarritoServlet" method="post">
+                            <input type="hidden" name="action" value="agregar">
+                            <input type="hidden" name="id" value="<%= producto.getId() %>">
+                            <input type="hidden" name="nombre" value="<%= producto.getNombre() %>">
+                            <input type="hidden" name="precio" value="<%= producto.getPrecio() %>">
+                            <input type="hidden" name="imagen" value="<%= producto.getImagen() %>">
+                            <input type="hidden" name="cantidad" class="cantidad-hidden" value="1">
+                            <button type="submit" class="btn-agregar">Agregar al carrito</button>
+                        </form>
+                    </div>
+                    <% } %>
                 </div>
-                <form action="CarritoServlet" method="post">
-                    <input type="hidden" name="action" value="agregar">
-                    <input type="hidden" name="id" value="<%= producto.getId() %>">
-                    <input type="hidden" name="nombre" value="<%= producto.getNombre() %>">
-                    <input type="hidden" name="precio" value="<%= producto.getPrecio() %>">
-                    <input type="hidden" name="imagen" value="<%= producto.getImagen() %>">
-                    <input type="hidden" name="cantidad" class="cantidad-hidden" value="1">
-                    <button type="submit" class="btn-agregar">Agregar al carrito</button>
-                </form>
             </div>
-        <% } %>
-    </div>
-</div>
-             
+
         </section>
- 
+
         <button onclick="window.location.href='contacto.jsp'" class="btn-ayuda">¿Necesitas ayuda?</button>
- 
+
         <footer>
             <p>&copy; 2024 XCEL_SERVER. Todos los derechos reservados.</p>
         </footer>
 
         <!-- JavaScript para controlar la cantidad de productos -->
-        
-<script>
-document.querySelectorAll('.btn-incrementar').forEach(button => {
-    button.addEventListener('click', function() {
-        let input = this.previousElementSibling;
-        input.value = parseInt(input.value) + 1;
-        let hiddenInput = this.closest('.producto-item').querySelector('.cantidad-hidden');
-        hiddenInput.value = input.value;
-    });
-});
 
-document.querySelectorAll('.btn-decrementar').forEach(button => {
-    button.addEventListener('click', function() {
-        let input = this.nextElementSibling;
-        if (parseInt(input.value) > 1) {
-            input.value = parseInt(input.value) - 1;
-            let hiddenInput = this.closest('.producto-item').querySelector('.cantidad-hidden');
-            hiddenInput.value = input.value;
-        }
-    });
-});
-</script>
+        <script>
+        document.querySelectorAll('.btn-incrementar').forEach(button => {
+                button.addEventListener('click', function () {
+                    let input = this.previousElementSibling;
+                    input.value = parseInt(input.value) + 1;
+                    let hiddenInput = this.closest('.producto-item').querySelector('.cantidad-hidden');
+                    hiddenInput.value = input.value;
+                });
+            });
+
+            document.querySelectorAll('.btn-decrementar').forEach(button => {
+                button.addEventListener('click', function () {
+                    let input = this.nextElementSibling;
+                    if (parseInt(input.value) > 1) {
+                        input.value = parseInt(input.value) - 1;
+                        let hiddenInput = this.closest('.producto-item').querySelector('.cantidad-hidden');
+                        hiddenInput.value = input.value;
+                    }
+                });
+            });
+        </script>
 
     </body>
 </html>

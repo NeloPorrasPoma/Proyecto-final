@@ -25,6 +25,9 @@
     <body>
         <header>
             <nav>
+            <ul class="nav-left"> 
+                <li>XCEL SERVER</li> 
+            </ul>
                 <ul class="nav-center"> 
                     <li><a href="productos.jsp">PRODUCTOS</a></li>
                     <li><a href="nosotros.jsp">NOSOTROS</a></li>
@@ -36,12 +39,13 @@
         <main>
             <div id="login">
                 <img src="images/logo.png" alt="LOGO" class="login-image">
-                <form action="LoginServlet" method="post" class="form-login">
-                    <label for="username">Usuario:</label>
-                    <input type="text" id="username" name="username" required>
-
-                    <label for="password">Contraseña:</label>
-                    <input type="password" id="password" name="password" required>
+                              <p class="enlace">¡Bienvenido a XCEL SERVER.com!</p> 
+                              <p class="enlace">Ingresa tu usuario y contraseña para iniciar sesión!</p> 
+                              <p class="enlace">   </p> 
+                <form action="LoginServlet" method="post" class="form-login"> 
+                   
+                    <input type="text" id="username" name="username" placeholder="Ingresa tu usuario" required>
+                     <input type="password" id="password" name="password" placeholder="Ingresa tu contraseña" required> 
 
                     <button type="submit">Iniciar Sesión</button>
                 </form>

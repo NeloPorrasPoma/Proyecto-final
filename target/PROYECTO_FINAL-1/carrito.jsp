@@ -22,6 +22,9 @@
 <body>
     <header>
     <nav>
+                    <ul class="nav-left"> 
+                <li>XCEL SERVER</li> 
+            </ul>
         <ul class="nav-center">
             <% if (usuario == null) { %> 
                 <li><a href="productos.jsp">PRODUCTOS</a></li>

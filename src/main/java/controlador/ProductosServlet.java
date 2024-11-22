@@ -4,17 +4,30 @@
  */
 package controlador;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.List;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.MultipartConfig;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.Part;
 import DAO.CategoriaDAO;
+import DAO.ProductoDAO;
+import java.io.InputStream;
 import modelo.Categoria;
 import modelo.Producto;
-import DAO.ProductoDAO;
-
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
+ 
+@MultipartConfig(
+    fileSizeThreshold = 1024 * 1024 * 2, // 2MB
+    maxFileSize = 1024 * 1024 * 10, // 10MB
+    maxRequestSize = 1024 * 1024 * 50 // 50MB
+)
 public class ProductosServlet extends HttpServlet {
 
     private final ProductoDAO productoDAO = new ProductoDAO();
@@ -53,83 +66,135 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response)
     }
 }
 
-    
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
         String action = request.getParameter("action");
 
         if ("guardar".equals(action)) {
-            // Guardar nuevo producto
-            String nombre = request.getParameter("nombre");
-            String descripcion = request.getParameter("descripcion");
-            int stock = Integer.parseInt(request.getParameter("stock"));
-            String categoriaStr = request.getParameter("categoria");
-            String imagen = request.getParameter("imagen");
-            double precio = Double.parseDouble(request.getParameter("precio"));
-
-            // Convertir la categoría a entero (ID)
-            int categoriaId;
-            try {
-                categoriaId = Integer.parseInt(categoriaStr);
-            } catch (NumberFormatException e) {
-                request.setAttribute("mensaje", "Error: La categoría no es un número válido.");
-                request.getRequestDispatcher("almacen.jsp").forward(request, response);
-                return;
-            }
-
-            Producto nuevoProducto = new Producto(nombre, descripcion, stock, categoriaId, imagen, precio);
-
-            boolean guardado = productoDAO.guardarProducto(nuevoProducto);
-            request.setAttribute("mensaje", guardado ? "Producto guardado exitosamente" : "Error al guardar el producto");
-
+            guardarProducto(request, response);
         } else if ("editar".equals(action)) {
-            // Editar producto existente
-            int id = Integer.parseInt(request.getParameter("id"));
-            String nombre = request.getParameter("nombre");
-            String descripcion = request.getParameter("descripcion");
-            int stock = Integer.parseInt(request.getParameter("stock"));
-            String categoriaStr = request.getParameter("categoria");
-            String imagen = request.getParameter("imagen");
-            double precio = Double.parseDouble(request.getParameter("precio"));
-
-            // Convertir la categoría a entero (ID)
-            int categoriaId;
-            try {
-                categoriaId = Integer.parseInt(categoriaStr);
-            } catch (NumberFormatException e) {
-                request.setAttribute("mensaje", "Error: La categoría no es un número válido.");
-                request.getRequestDispatcher("almacen.jsp").forward(request, response);
-                return;
-            }
-
-            Producto productoEditado = new Producto(id, nombre, descripcion, stock, categoriaId, imagen, precio);
-
-            boolean actualizado = productoDAO.actualizarProducto(productoEditado);
-            request.setAttribute("mensaje", actualizado ? "Producto actualizado exitosamente" : "Error al actualizar el producto");
-
+            editarProducto(request, response);
         } else if ("eliminar".equals(action)) {
-            // Eliminar producto
-            int id = Integer.parseInt(request.getParameter("id"));
-            boolean eliminado = productoDAO.eliminarProducto(id);
-            request.setAttribute("mensaje", eliminado ? "Producto eliminado exitosamente" : "Error al eliminar el producto");
+            eliminarProducto(request, response);
         } else if ("cargar".equals(action)) {
-            // Cargar datos de producto para edición
-            int id = Integer.parseInt(request.getParameter("id"));
-            Producto producto = productoDAO.buscarProductoPorId(id);
+            cargarProducto(request, response);
+        }
+    }
 
-            // Establecer los datos del producto en la solicitud
-            request.setAttribute("producto", producto);
-            List<Categoria> categorias = categoriaDAO.obtenerCategorias();
-            request.setAttribute("categorias", categorias);
+    private void guardarProducto(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        String nombre = request.getParameter("nombre");
+        String descripcion = request.getParameter("descripcion");
+        int stock = Integer.parseInt(request.getParameter("stock"));
+        String categoriaStr = request.getParameter("categoria");
+        double precio = Double.parseDouble(request.getParameter("precio"));
+
+        Part imagenPart = request.getPart("imagen");
+        String nombreArchivo = guardarArchivoImagen(imagenPart);
+
+        int categoriaId;
+        try {
+            categoriaId = Integer.parseInt(categoriaStr);
+        } catch (NumberFormatException e) {
+            request.setAttribute("mensaje", "Error: La categoría no es válida.");
+            request.getRequestDispatcher("almacen.jsp").forward(request, response);
+            return;
         }
 
-        // Redirigir a almacen.jsp después de cada acción
+        Producto nuevoProducto = new Producto(nombre, descripcion, stock, categoriaId, nombreArchivo, precio);
+
+        boolean guardado = productoDAO.guardarProducto(nuevoProducto);
+        request.setAttribute("mensaje", guardado ? "Producto guardado exitosamente" : "Error al guardar el producto");
+
+        redirigirAlmacen(request, response);
+    }
+
+    private void editarProducto(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        int id = Integer.parseInt(request.getParameter("id"));
+        String nombre = request.getParameter("nombre");
+        String descripcion = request.getParameter("descripcion");
+        int stock = Integer.parseInt(request.getParameter("stock"));
+        String categoriaStr = request.getParameter("categoria");
+        double precio = Double.parseDouble(request.getParameter("precio"));
+
+        Part imagenPart = request.getPart("imagen");
+        String nombreArchivo = guardarArchivoImagen(imagenPart);
+
+        int categoriaId;
+        try {
+            categoriaId = Integer.parseInt(categoriaStr);
+        } catch (NumberFormatException e) {
+            request.setAttribute("mensaje", "Error: La categoría no es válida.");
+            request.getRequestDispatcher("almacen.jsp").forward(request, response);
+            return;
+        }
+
+        Producto productoEditado = new Producto(id, nombre, descripcion, stock, categoriaId, nombreArchivo, precio);
+
+        boolean actualizado = productoDAO.actualizarProducto(productoEditado);
+        request.setAttribute("mensaje", actualizado ? "Producto actualizado exitosamente" : "Error al actualizar el producto");
+
+        redirigirAlmacen(request, response);
+    }
+
+    private void eliminarProducto(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        int id = Integer.parseInt(request.getParameter("id"));
+        boolean eliminado = productoDAO.eliminarProducto(id);
+        request.setAttribute("mensaje", eliminado ? "Producto eliminado exitosamente" : "Error al eliminar el producto");
+
+        redirigirAlmacen(request, response);
+    }
+
+    private void cargarProducto(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        int id = Integer.parseInt(request.getParameter("id"));
+        Producto producto = productoDAO.buscarProductoPorId(id);
+
+        request.setAttribute("producto", producto);
+        List<Categoria> categorias = categoriaDAO.obtenerCategorias();
+        request.setAttribute("categorias", categorias);
+
+        request.getRequestDispatcher("almacen.jsp").forward(request, response);
+    } 
+
+    private String guardarArchivoImagen(Part imagenPart) throws IOException {
+        if (imagenPart == null || imagenPart.getSize() <= 0) {
+            return null; // No se ha enviado imagen, retornamos null.
+        }
+
+        // Obtener el nombre del archivo
+        String nombreArchivo = Paths.get(imagenPart.getSubmittedFileName()).getFileName().toString();
+
+        // Usar la ruta proporcionada por ti
+        Path rutaReal = Paths.get("C:\\Users\\UsuarioTK\\Desktop\\NELSON\\AGOSTO 2024\\INTEGRADOR\\PROYECTO FINAL\\PROYECTO\\src\\main\\webapp\\images\\productos");
+
+        // Crear el directorio si no existe
+        if (!Files.exists(rutaReal)) {
+            Files.createDirectories(rutaReal); // Crear el directorio si no existe.
+        }
+
+        // Definir la ruta completa del archivo
+        Path rutaArchivo = rutaReal.resolve(nombreArchivo);
+
+        // Escribir el archivo en la ubicación especificada
+        try (InputStream input = imagenPart.getInputStream()) {
+            Files.copy(input, rutaArchivo, StandardCopyOption.REPLACE_EXISTING);
+        }
+
+        // Retornar la ruta relativa del archivo
+        return "images/productos/" + nombreArchivo;
+    }
+
+    // Método para redirigir a la vista de almacen
+    private void redirigirAlmacen(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
         List<Producto> productos = productoDAO.obtenerTodosProductos();
-    request.setAttribute("productos", productos);
-    List<Categoria> categorias = categoriaDAO.obtenerCategorias();
-    request.setAttribute("categorias", categorias);
-    request.getRequestDispatcher("almacen.jsp").forward(request, response);
+        List<Categoria> categorias = categoriaDAO.obtenerCategorias();
+        request.setAttribute("productos", productos);
+        request.setAttribute("categorias", categorias);
+        request.getRequestDispatcher("almacen.jsp").forward(request, response);
     }
 }
