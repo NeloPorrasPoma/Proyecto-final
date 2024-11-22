@@ -90,17 +90,17 @@ atención al cliente.</p>
                 <h2>CONOCE AL EQUIPO</h2>
                 <div class="equipo-grid">
                     <div class="miembro-equipo">
-                        <img src="img/IMG.jpg" alt="CEO - XCEL SERVER">
+                        <img src="images/1.png" alt="CEO - XCEL SERVER">
                         <p>Juan Danilo Porras</p>
                         <p>Fundado de Xcel Server.</p>
                     </div>
                     <div class="miembro-equipo">
-                        <img src="img/img.jpg" alt="TRABAJADOR 1">
+                        <img src="images/2.png" alt="TRABAJADOR 1">
                         <p>Nelson Porras</p>
                         <p>Forma parte de nuestro equipo desde 2016.</p>
                     </div>
                     <div class="miembro-equipo">
-                        <img src="img/IMG.jpg" alt="RABAJADOR 2">
+                        <img src="images/3.png" alt="RABAJADOR 2">
                         <p>Carlos Perez</p>
                         <p>Forma parte de nuestro equipo desde 2016.</p>
                     </div>
