@@ -12,6 +12,7 @@ controlador\IndexServlet.class
 controlador\GenerarBoletaServlet.class
 controlador\CarritoServlet.class
 modelo\Pedido.class
+utils\PasswordUtils.class
 DAO\CategoriaDAO.class
 controlador\ReporteServlet.class
 modelo\Rol.class
@@ -25,5 +26,6 @@ DAO\PedidoDAO.class
 modelo\Producto.class
 controlador\ProcesarPagoServlet.class
 controlador\AjustesServlet.class
+utils\EncriptarContrasenas.class
 modelo\Usuario.class
 controlador\LoginServlet.class
