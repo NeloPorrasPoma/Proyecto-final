@@ -23,10 +23,7 @@
     </head>
     <body>
         <header>
-            <nav>
-                <ul class="nav-left"> 
-                    <li>XCEL SERVER</li> 
-                </ul>
+            <nav> 
                 <ul class="nav-center">
                     <% if (usuario == null) { %> 
                     <li><a href="productos.jsp">PRODUCTOS</a></li>
@@ -37,7 +34,8 @@
                         <% if ("CLIENTE".equals(rol)) { %> 
                     <li><a href="productos.jsp">PRODUCTOS</a></li>
                     <li><a href="nosotros.jsp">NOSOTROS</a></li>
-                    <li><a href="carrito.jsp">CARRITO</a></li>
+                    <li><a href="carrito.jsp">CARRITO</a></li>                           
+                <li><a href="mispedidos.jsp">MIS PEDIDOS</a></li>
                     <li><a href="contacto.jsp">CONTACTO</a></li>
                         <% } else if ("EMPLEADO".equals(rol)) { %>
                     <li><a href="nosotros.jsp">NOSOTROS</a></li>

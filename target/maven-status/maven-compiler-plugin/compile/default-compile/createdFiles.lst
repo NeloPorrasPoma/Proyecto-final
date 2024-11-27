@@ -9,6 +9,7 @@ controlador\LogoutServlet.class
 controlador\UsuarioServlet.class
 DAO\UsuarioAdminDAO.class
 controlador\IndexServlet.class
+controlador\GenerarBoletaServlet.class
 controlador\CarritoServlet.class
 modelo\Pedido.class
 DAO\CategoriaDAO.class

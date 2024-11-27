@@ -20,10 +20,7 @@
 </head>
 <body> 
 <header>
-    <nav>
-            <ul class="nav-left"> 
-                <li>XCEL SERVER</li> 
-            </ul>
+    <nav> 
         <ul class="nav-center">
             <% if (usuario == null) { %> 
                 <li><a href="productos.jsp">PRODUCTOS</a></li>
@@ -34,7 +31,8 @@
                 <% if ("CLIENTE".equals(rol)) { %> 
                     <li><a href="productos.jsp">PRODUCTOS</a></li>
                     <li><a href="nosotros.jsp">NOSOTROS</a></li>
-                    <li><a href="carrito.jsp">CARRITO</a></li>
+                    <li><a href="carrito.jsp">CARRITO</a></li>                           
+                <li><a href="mispedidos.jsp">MIS PEDIDOS</a></li>
                     <li><a href="contacto.jsp">CONTACTO</a></li>
                 <% } else if ("EMPLEADO".equals(rol)) { %>
                     <li><a href="nosotros.jsp">NOSOTROS</a></li>
@@ -61,16 +59,18 @@
     </nav>
 </header>
 
-  <main>
-        <h2>Reporte de Pedidos</h2>
-        <form action="ReporteServlet" method="get">
-            <label for="fechaInicio">Fecha Inicio:</label>
-            <input type="date" name="fechaInicio" id="fechaInicio" required>
-            <label for="fechaFin">Fecha Fin:</label>
-            <input type="date" name="fechaFin" id="fechaFin" required>
-            <button type="submit" name="accion" value="mostrar">Mostrar Reporte</button>
-            <button type="submit" name="accion" value="exportar">Exportar a Excel</button>
-        </form>
+        <main>
+            <h2>Reporte de Pedidos</h2>
+            <form action="ReporteServlet" method="get">
+                <label for="fechaInicio">Fecha Inicio:</label>
+                <input type="date" name="fechaInicio" id="fechaInicio" required>
+                <label for="fechaFin">Fecha Fin:</label>
+                <input type="date" name="fechaFin" id="fechaFin" required>
+                <button type="submit" name="accion" value="mostrar">Mostrar Reporte</button>
+                <button type="submit" name="accion" value="exportarPDF">Exportar a PDF</button>
+                <button type="submit" name="accion" value="exportarExcel">Exportar a Excel</button>
+            </form>
+
         <c:if test="${not empty totalVentas}">
             <h3>Total de Ventas: ${totalVentas}</h3>
             <h3>Cantidad de Productos Vendidos: ${cantidadProductosVendidos}</h3>

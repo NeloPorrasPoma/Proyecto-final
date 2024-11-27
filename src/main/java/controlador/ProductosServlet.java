@@ -3,8 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
 package controlador;
-
-import java.io.File;
+ 
 import java.io.IOException;
 import java.util.List;
 import jakarta.servlet.ServletException;
@@ -167,11 +166,9 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response)
 
         // Obtener el nombre del archivo
         String nombreArchivo = Paths.get(imagenPart.getSubmittedFileName()).getFileName().toString();
-
-        // Usar la ruta proporcionada por ti
+ 
         Path rutaReal = Paths.get("C:\\Users\\UsuarioTK\\Desktop\\NELSON\\AGOSTO 2024\\INTEGRADOR\\PROYECTO FINAL\\PROYECTO\\src\\main\\webapp\\images\\productos");
-
-        // Crear el directorio si no existe
+ 
         if (!Files.exists(rutaReal)) {
             Files.createDirectories(rutaReal); // Crear el directorio si no existe.
         }

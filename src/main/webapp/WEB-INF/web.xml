@@ -52,6 +52,10 @@
         <servlet-name>UsuarioServlet</servlet-name>
         <servlet-class>controlador.UsuarioServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>GenerarBoletaServlet</servlet-name>
+        <servlet-class>controlador.GenerarBoletaServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>MiServlet</servlet-name>
         <url-pattern>/MiServlet</url-pattern>
@@ -103,6 +107,10 @@
     <servlet-mapping>
         <servlet-name>UsuarioServlet</servlet-name>
         <url-pattern>/UsuarioServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GenerarBoletaServlet</servlet-name>
+        <url-pattern>/GenerarBoletaServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

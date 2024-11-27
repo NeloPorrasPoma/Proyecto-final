@@ -1,0 +1,120 @@
+/* Variables */
+@primary-color: #004aad;
+@secondary-color: #28a745;
+@background-color-light: #f9f9f9;
+@border-color: #ddd;
+@box-shadow-light: 0px 4px 8px rgba(0, 0, 0, 0.1);
+@box-shadow-hover: 0px 6px 12px rgba(0, 0, 0, 0.2);
+@box-shadow-product: 0px 3px 6px rgba(0, 0, 0, 0.1);
+@box-shadow-product-hover: 0px 6px 12px rgba(0, 0, 0, 0.15);
+@border-radius: 8px;
+@input-padding: 20px;
+@font-size: 14px;
+@btn-padding: 10px 15px;
+
+/* SECCIÓN ALMACÉN */
+.contenedor-principal {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 20px auto;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+}
+
+.cuadro {
+    border: 1px solid @border-color;
+    padding: @input-padding;
+    flex: 1 1 calc(33.333% - 20px);
+    background-color: #fff;
+    border-radius: @border-radius;
+    box-shadow: @box-shadow-light;
+    transition: box-shadow 0.3s ease;
+
+    &:hover {
+        box-shadow: @box-shadow-hover;
+    }
+}
+
+/* Grid de productos */
+.productos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Estilo de cada producto */
+.producto-item {
+    border: 2px solid @primary-color;
+    border-radius: @border-radius;
+    padding: 15px;
+    text-align: center;
+    background-color: @background-color-light;
+    box-shadow: @box-shadow-product;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+        transform: scale(1.05);
+        box-shadow: @box-shadow-product-hover;
+    }
+
+    img {
+        width: 120px;
+        height: auto;
+        margin-bottom: 10px;
+        border-radius: 4px;
+        border: 1px solid @border-color;
+    }
+}
+
+/* Botones */
+button {
+    background-color: @secondary-color;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: @btn-padding;
+    font-size: @font-size;
+    width: 48%;
+    margin: 5px auto;
+    transition: background-color 0.3s ease, transform 0.2s;
+
+    &:hover {
+        background-color: darken(@secondary-color, 10%);
+        transform: translateY(-2px);
+    }
+
+    &:active {
+        background-color: darken(@secondary-color, 20%);
+        transform: translateY(1px);
+    }
+}
+
+/* Inputs y etiquetas */
+label, input, textarea, button {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: @btn-padding;
+    font-size: @font-size;
+    border-radius: 4px;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .contenedor-principal {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .cuadro {
+        flex: 1 1 100%;
+    }
+
+    .productos-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+}

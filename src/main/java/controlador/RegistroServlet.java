@@ -32,17 +32,17 @@ public class RegistroServlet extends HttpServlet {
         Usuario usuario = new Usuario();
         usuario.setUsuario(usuarioNombre);
         usuario.setContrasena(contrasena);
-        usuario.setRol("Cliente"); // Asignar rol cliente
+        usuario.setRol("Cliente");  
         UsuarioDAO usuarioDAO = new UsuarioDAO();
         
         DatosPersonales datosPersonales = new DatosPersonales(nombre, apellidos, docIdentidad, direccion, telefono, correo);
         
         try {
-            int usuarioId = usuarioDAO.registrarUsuario(usuario); // Almacena el usuario y obtiene su ID
+            int usuarioId = usuarioDAO.registrarUsuario(usuario); 
             if (usuarioId > 0) {
                 datosPersonales.setUsuarioId(usuarioId);
                 DatosPersonalesDAO datosDAO = new DatosPersonalesDAO();
-                datosDAO.registrarDatosPersonales(datosPersonales); // Guarda datos personales
+                datosDAO.registrarDatosPersonales(datosPersonales);  
             }
             response.sendRedirect("login.jsp?registroExitoso=true");
         } catch (Exception e) {

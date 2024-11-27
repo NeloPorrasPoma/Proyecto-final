@@ -1,0 +1,194 @@
+/* Variables */
+@primary-color: #004aad;
+@secondary-color: #ff6f61;
+@background-color: #f9f9f9;
+@text-color: #333;
+@link-color: #fff;
+@link-hover-color: #0353a4;
+@header-padding: 15px 0;
+@box-shadow-light: 0 2px 5px rgba(0, 0, 0, 0.1);
+@box-shadow-button: 0 4px 8px rgba(0, 0, 0, 0.2);
+@font-family: 'Roboto', Arial, sans-serif;
+@font-size: 14px;
+@font-size-large: 18px;
+@font-size-medium: 16px;
+@border-radius: 5px;
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo general */
+body {
+    font-family: @font-family;
+    line-height: 1.6;
+    background-color: @background-color;
+    color: @text-color;
+    scroll-behavior: smooth;
+}
+
+/* Header */
+header {
+    background-color: @primary-color;
+    color: @link-color;
+    padding: @header-padding;
+    box-shadow: @box-shadow-light;
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+
+        .nav-center,
+        .nav-right {
+            list-style: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-center {
+            flex-grow: 1;
+            justify-content: center;
+
+            li {
+                margin: 0 15px;
+
+                a {
+                    color: @link-color;
+                    text-decoration: none;
+                    padding: 8px 15px;
+                    border-radius: @border-radius;
+                    transition: background-color 0.3s ease-in-out, transform 0.2s;
+
+                    &:hover {
+                        background-color: @link-hover-color;
+                        transform: scale(1.1);
+                    }
+                }
+            }
+        }
+
+        .nav-left {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            margin-right: auto;
+        }
+
+        .nav-right {
+            li {
+                a {
+                    color: @link-color;
+                    text-decoration: none;
+                    padding: 8px 15px;
+                    border: 1px solid @link-color;
+                    border-radius: @border-radius;
+                    transition: all 0.3s ease-in-out;
+
+                    &:hover {
+                        background-color: @link-color;
+                        color: @primary-color;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Botón flotante de ayuda */
+.btn-ayuda {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: @secondary-color;
+    color: @link-color;
+    padding: 15px 20px;
+    border-radius: 50%;
+    text-align: center;
+    text-decoration: none;
+    font-size: @font-size-large;
+    box-shadow: @box-shadow-button;
+    transition: background-color 0.3s, transform 0.2s;
+    z-index: 1000;
+    animation: bounce 2s infinite;
+
+    &:hover {
+        background-color: darken(@secondary-color, 10%);
+        transform: rotate(360deg);
+    }
+}
+
+/* Animación del botón */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Pie de página */
+footer {
+    background-color: @primary-color;
+    color: @link-color;
+    padding: 10px;
+    text-align: center;
+    margin-top: 20px;
+    font-size: @font-size;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    header {
+        nav {
+            flex-direction: column;
+            align-items: center;
+
+            .nav-center,
+            .nav-right {
+                flex-direction: column;
+
+                li {
+                    margin: 5px 0;
+                }
+            }
+        }
+    }
+
+    .btn-ayuda {
+        padding: 10px 15px;
+        font-size: @font-size-medium;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: @font-size;
+    }
+
+    header {
+        nav {
+            padding: 0 10px;
+
+            .nav-center {
+                li {
+                    margin: 10px 0;
+                }
+            }
+        }
+    }
+
+    .btn-ayuda {
+        bottom: 15px;
+        right: 15px;
+        padding: 10px;
+        font-size: @font-size;
+    }
+}
