@@ -17,13 +17,15 @@ import modelo.Usuario;
 import modelo.DatosPersonales;
 import modelo.Rol;
 import DAO.RolDAO;
+import utils.PasswordUtils;
 
 public class UsuarioServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
-    private UsuarioAdminDAO usuarioDAO = new UsuarioAdminDAO();
-    private DatosPersonalesDAO datosPersonalesDAO = new DatosPersonalesDAO();
-    private RolDAO rolDAO = new RolDAO();
+    private final UsuarioAdminDAO usuarioAdminDAO = new UsuarioAdminDAO();
+    private final DatosPersonalesDAO datosPersonalesDAO = new DatosPersonalesDAO();
+    private final RolDAO rolDAO = new RolDAO();
 
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
         try {
@@ -31,7 +33,7 @@ public class UsuarioServlet extends HttpServlet {
                 case "buscarUsuario":
                     buscarUsuario(request, response);
                     break;
-                                    case "cargar":
+                case "cargar":
                     cargarUsuario(request, response);
                     break;
                 default:
@@ -43,6 +45,7 @@ public class UsuarioServlet extends HttpServlet {
         }
     }
 
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
         try {
@@ -56,7 +59,7 @@ public class UsuarioServlet extends HttpServlet {
                 case "eliminar":
                     eliminarUsuario(request, response);
                     break;
-                case "cargar":
+                    case "cargar":
                     cargarUsuario(request, response);
                     break;
             }
@@ -67,17 +70,17 @@ public class UsuarioServlet extends HttpServlet {
 
     private void buscarUsuario(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException {
         String nombre = request.getParameter("buscarUsuarioNombre");
-        List<Usuario> listaUsuarios = usuarioDAO.buscarUsuariosPorNombre(nombre);
+        List<Usuario> listaUsuarios = usuarioAdminDAO.buscarUsuariosPorNombre(nombre);
         request.setAttribute("usuarios", listaUsuarios);
-                List<Rol> roles = rolDAO.listarRoles();
+        List<Rol> roles = rolDAO.listarRoles();
         request.setAttribute("roles", roles);
         request.getRequestDispatcher("usuarios.jsp").forward(request, response);
     }
 
     private void listarUsuarios(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException {
-        List<Usuario> listaUsuarios = usuarioDAO.listarUsuarios();
+        List<Usuario> listaUsuarios = usuarioAdminDAO.listarUsuarios();
         request.setAttribute("usuarios", listaUsuarios);
-                List<Rol> roles = rolDAO.listarRoles();
+        List<Rol> roles = rolDAO.listarRoles();
         request.setAttribute("roles", roles);
         request.getRequestDispatcher("usuarios.jsp").forward(request, response);
     }
@@ -92,10 +95,12 @@ public class UsuarioServlet extends HttpServlet {
         String usuarioNombre = request.getParameter("usuario");
         String contrasena = request.getParameter("contrasena");
         int rolId = Integer.parseInt(request.getParameter("rol"));
-
+        
+        String hashedPassword = PasswordUtils.hashPassword(contrasena);
+    
         Usuario usuario = new Usuario();
         usuario.setUsuario(usuarioNombre);
-        usuario.setContrasena(contrasena);
+        usuario.setContrasena(hashedPassword);
         usuario.setRol(String.valueOf(rolId));
 
         DatosPersonales datosPersonales = new DatosPersonales();
@@ -106,7 +111,7 @@ public class UsuarioServlet extends HttpServlet {
         datosPersonales.setTelefono(telefono);
         datosPersonales.setCorreo(correo);
 
-        int usuarioId = usuarioDAO.registrarUsuario(usuario);
+        int usuarioId = usuarioAdminDAO.registrarUsuario(usuario);
         datosPersonales.setUsuarioId(usuarioId);
 
         datosPersonalesDAO.registrarDatosPersonales(datosPersonales);
@@ -126,13 +131,15 @@ public class UsuarioServlet extends HttpServlet {
         String contrasena = request.getParameter("contrasena");
         int rolId = Integer.parseInt(request.getParameter("rol"));
 
-        Usuario usuario = new Usuario();
-        usuario.setId(id);
+        Usuario usuario = usuarioAdminDAO.obtenerUsuarioPorId(id);
         usuario.setUsuario(usuarioNombre);
-        usuario.setContrasena(contrasena);
         usuario.setRol(String.valueOf(rolId));
 
-        usuarioDAO.actualizarUsuario(usuario);
+        if (contrasena != null && !contrasena.isEmpty()) {
+            String hashedPassword = PasswordUtils.hashPassword(contrasena);
+            usuario.setContrasena(hashedPassword);
+        }
+        usuarioAdminDAO.actualizarUsuario(usuario);
 
         DatosPersonales datosPersonales = new DatosPersonales();
         datosPersonales.setNombre(nombre);
@@ -147,23 +154,25 @@ public class UsuarioServlet extends HttpServlet {
 
         response.sendRedirect("UsuarioServlet");
     }
+ 
 
     private void eliminarUsuario(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException {
         int id = Integer.parseInt(request.getParameter("id"));
 
-        usuarioDAO.eliminarUsuario(id);
+        usuarioAdminDAO.eliminarUsuario(id);
         datosPersonalesDAO.eliminarDatosPersonales(id);
 
         response.sendRedirect("UsuarioServlet");
     }
 
+
     private void cargarUsuario(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException {
         int id = Integer.parseInt(request.getParameter("id"));
 
-        Usuario usuario = usuarioDAO.obtenerUsuarioPorId(id);
+        Usuario usuario = usuarioAdminDAO.obtenerUsuarioPorId(id);
         DatosPersonales datosPersonales = datosPersonalesDAO.obtenerDatosPersonalesPorUsuarioId(id);
 
-        request.setAttribute("usuario", usuario);
+        request.setAttribute("usuarioSeleccionado", usuario);
         request.setAttribute("datosPersonales", datosPersonales);
         request.getRequestDispatcher("usuarios.jsp").forward(request, response);
     }

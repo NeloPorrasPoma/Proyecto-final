@@ -40,7 +40,7 @@
             <div id="login">
                 <img src="images/logo.png" alt="LOGO" class="login-image">
                               <p class="enlace">¡Bienvenido a XCEL SERVER.com!</p> 
-                              <p class="enlace">Ingresa tu usuario y contraseña para iniciar sesión!</p> 
+                              <p class="enlace">¡Ingresa tu usuario y contraseña para iniciar sesión!</p> 
                               <p class="enlace">   </p> 
                 <form action="LoginServlet" method="post" class="form-login"> 
                    
@@ -55,6 +55,7 @@
                 <% } %>
 
                 <p class="enlace">¿No tienes una cuenta? <a href="registro.jsp">Regístrate aquí</a></p>
+                 <p class="enlace"><a href="contraseña.jsp">Recuperar contraseña</a></p>
             </div>
         </main>
                 <button onclick="window.location.href='contacto.jsp'" class="btn-ayuda">¿Necesitas ayuda?</button>

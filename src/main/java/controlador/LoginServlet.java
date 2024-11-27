@@ -24,8 +24,7 @@ public class LoginServlet extends HttpServlet {
 
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-
-        // Utilizar el DAO para validar el usuario
+ 
         UsuarioDAO usuarioDAO = new UsuarioDAO();
         Usuario usuario = null;
         try {

@@ -13,6 +13,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import modelo.Usuario;
+import utils.PasswordUtils;
 
 public class UsuarioAdminDAO {
 
@@ -22,9 +23,14 @@ public class UsuarioAdminDAO {
         Connection con = conexion.conectar();
         try (PreparedStatement ps = con.prepareStatement(query, Statement.RETURN_GENERATED_KEYS)) {
             ps.setString(1, usuario.getUsuario());
-            ps.setString(2, usuario.getContrasena());
+          
+            // Encripta la contraseña antes de guardarla
+            String hashedPassword = PasswordUtils.hashPassword(usuario.getContrasena());
+            ps.setString(2, hashedPassword);
+            
             ps.setInt(3, Integer.parseInt(usuario.getRol()));
             ps.executeUpdate();
+            
             ResultSet rs = ps.getGeneratedKeys();
             if (rs.next()) {
                 usuarioId = rs.getInt(1);
@@ -56,7 +62,13 @@ public class UsuarioAdminDAO {
         Connection con = conexion.conectar();
         try (PreparedStatement ps = con.prepareStatement(query)) {
             ps.setString(1, usuario.getUsuario());
+             
+        if (usuario.getContrasena() != null && !usuario.getContrasena().isEmpty()) {
+            String hashedPassword = PasswordUtils.hashPassword(usuario.getContrasena());
+            ps.setString(2, hashedPassword);
+        } else { 
             ps.setString(2, usuario.getContrasena());
+        }
             ps.setInt(3, Integer.parseInt(usuario.getRol()));
             ps.setInt(4, usuario.getId());
             ps.executeUpdate();
@@ -90,6 +102,7 @@ public class UsuarioAdminDAO {
         }
         return usuario;
     }
+    
 
     public List<Usuario> buscarUsuariosPorNombre(String nombre) throws SQLException {
         List<Usuario> usuarios = new ArrayList<>();

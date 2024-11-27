@@ -90,7 +90,7 @@ List<Rol> roles = (List<Rol>) request.getAttribute("roles");
                             <p>Rol: ${usuario.rol}</p>
                             <form action="UsuarioServlet" method="post">
                                 <input type="hidden" name="id" value="${usuario.id}">
-                                <button type="submit" name="action" value="cargar">Seleccionar</button>
+                                <button type="submit" name="action" value="cargar">Seleccionar</button>                                
                                 <button type="submit" name="action" value="eliminar">Eliminar</button>
                             </form>
                         </div>
@@ -100,7 +100,7 @@ List<Rol> roles = (List<Rol>) request.getAttribute("roles");
             <!-- Cuadro 2: Agregar/Editar usuarios -->
             <div class="cuadro" id="registro"> 
                 <h2>Registro de Usuario</h2>
-                <form action="RegistroServlet" method="post" class="form-registro">
+                <form action="UsuarioServlet" method="post" class="form-registro">
                     <input type="hidden" name="id" value="${usuarioSeleccionado.id}"> 
                     <input type="text" id="nombre" name="nombre" value="${datosPersonales.nombre}" required placeholder="Nombre"> 
                     <input type="text" id="apellidos" name="apellidos" value="${datosPersonales.apellidos}" required placeholder="Apellidos"> 
